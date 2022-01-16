@@ -1,0 +1,37 @@
+.btn-animation{
+
+    position: relative;
+   overflow: hidden;
+    
+
+    &::before{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 70px;
+        height: 70px;
+        content: '';
+        transform: skew(120deg);
+        // transform: scale(0);
+        transition: left 0.3s;
+        z-index: -1;
+
+    }
+
+    &:hover::before{
+        left: 150%;
+        transform: scale(1);
+        transform: skew(120deg);
+    }
+}
+
+.bottom-slide{
+    position: absolute;
+    width:60%;
+    bottom: 0;
+   left: -10%;
+    transform: skew(45deg);
+    height: 30px;
+    background-color: #fff;
+    z-index: 15;
+}

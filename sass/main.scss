@@ -1,0 +1,266 @@
+@import 'colors';
+@import 'components';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--regural-font: 'roboto', sans-serif;
+	--bold-font: 'robotobold', sans-serif;
+	--light-font: 'robotlight', sans-serif;
+}
+@font-face {
+	font-family: 'roboto';
+	src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
+		url('../fonts/roboto-regular-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'robotolight';
+	src: url('../fonts/roboto-light-webfont.woff2') format('woff2'),
+		url('../fonts/roboto-light-webfont.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'robotobold';
+	src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
+		url('../fonts/roboto-bold-webfont.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+body {
+	font-family: var(--regural-font);
+	font-size: 1.6rem;
+	position: relative;
+}
+
+//nav
+
+.nav {
+	// display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $black;
+	z-index: 100;
+	clip-path: circle(25% at 50% 50%);
+	transform: scale(0);
+	transition: 0.3s ease-in;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		&-link {
+			margin-bottom: 20px;
+			font-size: 2.4rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $white;
+			transition: color 0.3s;
+			padding: 0.2em;
+
+			&:hover {
+				color: $link-color;
+			}
+		}
+	}
+}
+.toggle-nav {
+	display: block;
+
+	clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 70%, 100% 100%, 0 100%, 0% 70%, 0 0);
+	transform: scale(1);
+	clip-path: circle(75% at 50% 50%);
+}
+
+//header
+.header {
+	position: relative;
+
+	&__box {
+		position: relative;
+		height: 80vh;
+		overflow: hidden;
+
+		&-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 80vh;
+			background-image: url('../img/header-mini.jpg');
+			background-size: cover;
+			background-position: center;
+			z-index: -4;
+		}
+		&-text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 80vh;
+			color: $white;
+			z-index: 5;
+		}
+		&-heading {
+			letter-spacing: 2px;
+			margin-bottom: 0.6em;
+			font-size: 5rem;
+			font-family: 'Dancing Script', cursive;
+			font-weight: 700;
+		}
+		&-description {
+			margin-bottom: 0.5em;
+			font-size: 1.8rem;
+		}
+
+		&-btn {
+			margin-top: 1.2em;
+			border-radius: 10px;
+			border: 1px solid $white;
+			cursor: pointer;
+
+			&::before {
+				background-color: rgba(236, 230, 230, 0.3);
+			}
+			a {
+				font-family: var(--light-font);
+				display: block;
+				text-transform: uppercase;
+				text-decoration: none;
+				color: $white;
+				font-size: 1.8rem;
+				padding: 0.4em 0.8em;
+			}
+		}
+		&-shadow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.65);
+			z-index: -3;
+		}
+	}
+	.button__bars {
+		position: fixed;
+		padding: 1em;
+		top: 5px;
+		right: 5px;
+		z-index: 111;
+
+		.bars{
+			position: absolute;
+			top: -1000%;
+			right: -1000%;
+		}
+
+		.menu {
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			transition: 0.5s ease;
+
+			.bar {
+				width: 40px;
+				height: 5.5px;
+				background-color: $white;
+
+				border-radius: 8px;
+				z-index: 111;
+
+				transition: transform 0.5s, margin-top 0.5s;
+				&:not(:first-child) {
+					margin-top: 8px;
+				}
+			}
+		}
+
+		.bars:checked + .menu {
+			.bar {
+				&:first-child {
+					margin-top: 20px;
+					transform: rotate(-45deg);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:nth-child(3) {
+					margin-top: -20px;
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+}
+
+//MEDIA
+@media (min-width: 768px) {
+	.header {
+		&__box {
+			&-heading {
+				font-size: 6rem;
+			}
+
+			&-description {
+				font-size: 2.2rem;
+			}
+
+			&-btn {
+				a {
+					font-size: 2.2rem;
+				}
+			}
+		}
+
+		.button__bars {
+			top: 20px;
+			right: 20px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		&__box {
+			&-img {
+				background-image: url('../img/header-big.jpg');
+			}
+
+			&-heading {
+				font-size: 7rem;
+			}
+
+			&-description {
+				font-size: 2.8rem;
+			}
+
+			&-btn {
+				a {
+					font-size: 2.8rem;
+				}
+			}
+		}
+	}
+}

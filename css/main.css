@@ -1,0 +1,316 @@
+.btn-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animation::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70px;
+  height: 70px;
+  content: '';
+  -webkit-transform: skew(120deg);
+          transform: skew(120deg);
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.btn-animation:hover::before {
+  left: 150%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform: skew(120deg);
+          transform: skew(120deg);
+}
+
+.bottom-slide {
+  position: absolute;
+  width: 60%;
+  bottom: 0;
+  left: -10%;
+  -webkit-transform: skew(45deg);
+          transform: skew(45deg);
+  height: 30px;
+  background-color: #fff;
+  z-index: 15;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --regural-font: 'roboto', sans-serif;
+  --bold-font: 'robotobold', sans-serif;
+  --light-font: 'robotlight', sans-serif;
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotolight';
+  src: url("../fonts/roboto-light-webfont.woff2") format("woff2"), url("../fonts/roboto-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotobold';
+  src: url("../fonts/roboto-bold-webfont.woff2") format("woff2"), url("../fonts/roboto-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--regural-font);
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 100;
+  -webkit-clip-path: circle(25% at 50% 50%);
+          clip-path: circle(25% at 50% 50%);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.nav__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.nav__box-link {
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  padding: 0.2em;
+}
+
+.nav__box-link:hover {
+  color: #a4a4a4;
+}
+
+.toggle-nav {
+  display: block;
+  -webkit-clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 70%, 100% 100%, 0 100%, 0% 70%, 0 0);
+          clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 70%, 100% 100%, 0 100%, 0% 70%, 0 0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-clip-path: circle(75% at 50% 50%);
+          clip-path: circle(75% at 50% 50%);
+}
+
+.header {
+  position: relative;
+}
+
+.header__box {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.header__box-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  background-image: url("../img/header-mini.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -4;
+}
+
+.header__box-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80vh;
+  color: #fff;
+  z-index: 5;
+}
+
+.header__box-heading {
+  letter-spacing: 2px;
+  margin-bottom: 0.6em;
+  font-size: 5rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+}
+
+.header__box-description {
+  margin-bottom: 0.5em;
+  font-size: 1.8rem;
+}
+
+.header__box-btn {
+  margin-top: 1.2em;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.header__box-btn::before {
+  background-color: rgba(236, 230, 230, 0.3);
+}
+
+.header__box-btn a {
+  font-family: var(--light-font);
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 0.4em 0.8em;
+}
+
+.header__box-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: -3;
+}
+
+.header .button__bars {
+  position: fixed;
+  padding: 1em;
+  top: 5px;
+  right: 5px;
+  z-index: 111;
+}
+
+.header .button__bars .bars {
+  position: absolute;
+  top: -1000%;
+  right: -1000%;
+}
+
+.header .button__bars .menu {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.header .button__bars .menu .bar {
+  width: 40px;
+  height: 5.5px;
+  background-color: #fff;
+  border-radius: 8px;
+  z-index: 111;
+  -webkit-transition: margin-top 0.5s, -webkit-transform 0.5s;
+  transition: margin-top 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, margin-top 0.5s;
+  transition: transform 0.5s, margin-top 0.5s, -webkit-transform 0.5s;
+}
+
+.header .button__bars .menu .bar:not(:first-child) {
+  margin-top: 8px;
+}
+
+.header .button__bars .bars:checked + .menu .bar:first-child {
+  margin-top: 20px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header .button__bars .bars:checked + .menu .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header .button__bars .bars:checked + .menu .bar:nth-child(3) {
+  margin-top: -20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+  .header__box-heading {
+    font-size: 6rem;
+  }
+  .header__box-description {
+    font-size: 2.2rem;
+  }
+  .header__box-btn a {
+    font-size: 2.2rem;
+  }
+  .header .button__bars {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__box-img {
+    background-image: url("../img/header-big.jpg");
+  }
+  .header__box-heading {
+    font-size: 7rem;
+  }
+  .header__box-description {
+    font-size: 2.8rem;
+  }
+  .header__box-btn a {
+    font-size: 2.8rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
