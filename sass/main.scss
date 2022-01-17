@@ -71,7 +71,8 @@ body {
 		height: 100%;
 
 		&-link {
-			margin-bottom: 20px;
+			position: relative;
+			margin-bottom: 1em;
 			font-size: 2.4rem;
 			text-decoration: none;
 			text-transform: uppercase;
@@ -82,9 +83,34 @@ body {
 			&:hover {
 				color: $link-color;
 			}
+
+			&:hover::before,
+			&:hover::after {
+				width: 50%;
+			}
+
+			&::before,
+			&::after {
+				position: absolute;
+				bottom: 0;
+				content: '';
+				height: 0px;
+				width: 0px;
+				border-bottom: 2px solid $link-color;
+				z-index: 100;
+				transition: 0.3s;
+			}
+
+			&::after {
+				right: 50%;
+			}
+			&::before {
+				left: 50%;
+			}
 		}
 	}
 }
+
 .toggle-nav {
 	display: block;
 
@@ -163,54 +189,176 @@ body {
 			z-index: -3;
 		}
 	}
-	.button__bars {
+	.header__bars {
 		position: fixed;
 		padding: 1em;
 		top: 5px;
 		right: 5px;
 		z-index: 111;
 
-		.bars{
-			position: absolute;
-			top: -1000%;
-			right: -1000%;
-		}
-
-		.menu {
+		&-menu {
 			cursor: pointer;
 			width: 40px;
 			height: 40px;
-			transition: 0.5s ease;
+			transition: 0.3s ease;
 
-			.bar {
+			&:hover .header__bars-menu-item {
+				background-color: $button-hover-color;
+				// box-shadow: 0px 0px 2px 1px $link-color;
+			}
+
+			&-item {
 				width: 40px;
 				height: 5.5px;
 				background-color: $white;
-
 				border-radius: 8px;
 				z-index: 111;
-
-				transition: transform 0.5s, margin-top 0.5s;
+				transition: background-color 0.3s ease;
 				&:not(:first-child) {
 					margin-top: 8px;
 				}
 			}
 		}
+	}
+}
 
-		.bars:checked + .menu {
-			.bar {
-				&:first-child {
-					margin-top: 20px;
-					transform: rotate(-45deg);
+//MAIN
+
+//about-us
+
+.main {
+	.aboutus {
+		p {
+			padding-bottom: 2em;
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			&-item {
+				padding: 0.8em 0;
+
+				&:hover i,
+				&:hover h3 {
+					color: $link-color;
 				}
-				&:nth-child(2) {
-					opacity: 0;
+
+				i {
+					font-size: 4.6rem;
+					padding-bottom: 0.4em;
+					transition: color 0.3s;
 				}
-				&:nth-child(3) {
-					margin-top: -20px;
-					transform: rotate(45deg);
+
+				h3 {
+					padding-bottom: 0.2em;
+					font-size: 2.2rem;
+					transition: color 0.3s;
+				}
+
+				p {
+					font-size: 1.6rem;
 				}
 			}
+		}
+	}
+	//menu
+
+	.menu {
+		position: relative;
+		// height: 100vh;
+		background-color: $white;
+		// color: $menu-text-color;
+		// background-color: $menu-bgc-color;
+		color: $black;
+		overflow: hidden;
+
+		.menu__table {
+			// border: 1px solid yellow;
+			padding-top: 1em;
+			padding-bottom: 3em;
+
+			font-size: 1.8rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+
+			tr {
+				.border-none {
+					border: none;
+				}
+
+				td {
+					&:nth-child(1) {
+						padding-right: 2em;
+					}
+					//  padding: 1em 6em;
+					padding: 1em 0.8em;
+					border-bottom: 1px dashed $black;
+				}
+
+				&:first-child {
+					font-weight: bold;
+					font-size: 2rem;
+					color: $link-color;
+				}
+			}
+		}
+	}
+
+	.hero-img {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 400px;
+		background-image: url(../img/pizza-mini.jpg);
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		overflow: hidden;
+
+		z-index: -8;
+
+		&__text {
+			min-width: 280px;
+			max-width: 400px;
+			height: 50%;
+			margin: 0 3em;
+			color: $white;
+			text-align: center;
+			z-index: 20;
+
+			// translate: transform(-50%,0);
+			h4 {
+				font-size: 4.4rem;
+				padding-bottom: 0.5em;
+				font-family: 'Dancing Script', cursive;
+				font-weight: 700;
+			}
+
+			p {
+				font-size: 1.8rem;
+			}
+
+			hr{
+				margin: 1em 0;
+			}
+		}
+
+		&__shadow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.75);
+			z-index: 14;
 		}
 	}
 }
@@ -234,9 +382,79 @@ body {
 			}
 		}
 
-		.button__bars {
+		.header__bars {
 			top: 20px;
 			right: 20px;
+		}
+	}
+
+	.nav {
+		&__box {
+			&-link {
+				font-size: 3.2rem;
+			}
+		}
+	}
+
+	.main {
+		.aboutus {
+			p {
+				padding-bottom: 2em;
+				font-size: 1.8rem;
+			}
+
+			&__box {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				// align-items: center;
+				text-align: center;
+				padding-top: 1.2em;
+
+				&-item {
+					padding: 0.8em 0;
+					margin: 0 1.5em;
+
+					i {
+						font-size: 4.8rem;
+						padding-bottom: 0.4em;
+					}
+
+					h3 {
+						padding-bottom: 0.2em;
+						font-size: 2.4rem;
+					}
+
+					p {
+						padding: 1em;
+						font-size: 1.8rem;
+					}
+				}
+			}
+		}
+
+		.menu {
+			position: relative;
+
+			.menu__table {
+				// border: 1px solid yellow;
+				padding-top: 1em;
+				font-size: 2.4rem;
+
+				tr {
+					&:first-child {
+						font-size: 2.8rem;
+					}
+
+					td {
+						&:nth-child(1) {
+							padding-right: 10em;
+						}
+						//  padding: 1em 6em;
+						padding: 1em 1.8em;
+					}
+				}
+			}
 		}
 	}
 }
@@ -261,6 +479,12 @@ body {
 					font-size: 2.8rem;
 				}
 			}
+		}
+	}
+
+	.main {
+		.hero-img {
+			background-image: url(../img/pizza-big.jpg);
 		}
 	}
 }

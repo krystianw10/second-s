@@ -1,11 +1,9 @@
-const burgerBtn = document.querySelector('.menu')
+const burgerBtn = document.querySelector('.header__bars-menu')
 const nav = document.querySelector('.nav')
 const navLinks = document.querySelectorAll('.nav__box-link')
 
-
 const handleBtn = () => {
-	nav.classList.toggle('toggle-nav')
-
+	nav.classList.toggle('toggle-nav');
 
 	navLinks.forEach(item => {
 		item.addEventListener('click', () => {

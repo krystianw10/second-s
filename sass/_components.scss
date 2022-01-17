@@ -7,7 +7,7 @@
     &::before{
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -140%;
         width: 70px;
         height: 70px;
         content: '';
@@ -34,4 +34,31 @@
     height: 30px;
     background-color: #fff;
     z-index: 15;
+}
+.top-slide{
+    position: absolute;
+    width:60%;
+   top: 0;
+   right: -10%;
+    transform: skew(45deg);
+    height: 30px;
+    background-color: #fff;
+    z-index: 15;
+}
+
+.section-heading{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 1em;
+}
+
+.section-padding{
+    padding: 4em 2em;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
 }
