@@ -427,6 +427,7 @@ body {
   background-image: url(../img/pizza-mini.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   overflow: hidden;
   z-index: -8;
 }
@@ -532,6 +533,9 @@ body {
   }
   .main .menu .menu__table tr td:nth-child(1) {
     padding-right: 10em;
+  }
+  .main .hero-img {
+    height: 500px;
   }
 }
 
