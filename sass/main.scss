@@ -198,6 +198,7 @@ body {
 		z-index: 111;
 		background: none;
 		border: 1px solid transparent;
+
 		&:focus {
 			outline: none;
 			border: 1px solid $white;
@@ -433,6 +434,72 @@ body {
 			}
 		}
 	}
+
+	//contact
+	.contact {
+		.contact__boxes {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.contact__box {
+				position: relative;
+				width: 260px;
+				height: 150px;
+				margin: 2em;
+				border: 1px solid $grey;
+				border-top: none;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				&::before,
+				&::after {
+					position: absolute;
+					content: '';
+					top: 0;
+					width: 100px;
+					border-bottom: 1px solid $grey;
+				}
+
+				&::before {
+					left: 0;
+				}
+				&::after {
+					right: 0;
+				}
+
+				&-fas {
+					position: absolute;
+					top: -20px;
+					left: 50%;
+
+					transform: translateX(-50%);
+
+					i {
+						font-size: 2.8rem;
+					}
+				}
+
+				&-text {
+					text-align: center;
+					padding: 1em;
+					h5 {
+						padding-top: 0.8em;
+						margin-bottom: 1em;
+						font-size: 2rem;
+					}
+
+					p {
+						span {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 //MEDIA
@@ -532,6 +599,26 @@ body {
 		.hero-img {
 			height: 500px;
 		}
+
+		.contact {
+			.contact__boxes {
+				flex-direction: row;
+				justify-content: center;
+
+				.contact__box {
+					margin: 1em;
+
+					&::before,
+					&::after {
+						position: absolute;
+						content: '';
+						top: 0;
+						width: 80px;
+						border-bottom: 1px solid $grey;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -562,6 +649,28 @@ body {
 		.hero-img {
 			background-image: url(../img/pizza-big.jpg);
 			background-attachment: fixed;
+		}
+
+		.contact {
+			.contact__boxes {
+				flex-direction: row;
+				justify-content: center;
+
+				.contact__box {
+					margin: 2em;
+					width: 360px;
+					height: 250px;
+
+					&::before,
+					&::after {
+						position: absolute;
+						content: '';
+						top: 0;
+						width: 100px;
+						border-bottom: 1px solid $grey;
+					}
+				}
+			}
 		}
 	}
 

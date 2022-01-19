@@ -573,6 +573,84 @@ body {
      object-fit: cover;
 }
 
+.main .contact .contact__boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .contact .contact__boxes .contact__box {
+  position: relative;
+  width: 260px;
+  height: 150px;
+  margin: 2em;
+  border: 1px solid #9b8e8e;
+  border-top: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .contact .contact__boxes .contact__box::before, .main .contact .contact__boxes .contact__box::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  width: 100px;
+  border-bottom: 1px solid #9b8e8e;
+}
+
+.main .contact .contact__boxes .contact__box::before {
+  left: 0;
+}
+
+.main .contact .contact__boxes .contact__box::after {
+  right: 0;
+}
+
+.main .contact .contact__boxes .contact__box-fas {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main .contact .contact__boxes .contact__box-fas i {
+  font-size: 2.8rem;
+}
+
+.main .contact .contact__boxes .contact__box-text {
+  text-align: center;
+  padding: 1em;
+}
+
+.main .contact .contact__boxes .contact__box-text h5 {
+  padding-top: 0.8em;
+  margin-bottom: 1em;
+  font-size: 2rem;
+}
+
+.main .contact .contact__boxes .contact__box-text p span {
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .header__box-heading {
     font-size: 6rem;
@@ -643,6 +721,25 @@ body {
   .main .hero-img {
     height: 500px;
   }
+  .main .contact .contact__boxes {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main .contact .contact__boxes .contact__box {
+    margin: 1em;
+  }
+  .main .contact .contact__boxes .contact__box::before, .main .contact .contact__boxes .contact__box::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    width: 80px;
+    border-bottom: 1px solid #9b8e8e;
+  }
 }
 
 @media (min-width: 992px) {
@@ -661,6 +758,27 @@ body {
   .main .hero-img {
     background-image: url(../img/pizza-big.jpg);
     background-attachment: fixed;
+  }
+  .main .contact .contact__boxes {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main .contact .contact__boxes .contact__box {
+    margin: 2em;
+    width: 360px;
+    height: 250px;
+  }
+  .main .contact .contact__boxes .contact__box::before, .main .contact .contact__boxes .contact__box::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    width: 100px;
+    border-bottom: 1px solid #9b8e8e;
   }
   .section-heading .heading-decoration::before, .section-heading .heading-decoration::after {
     width: 70px;
