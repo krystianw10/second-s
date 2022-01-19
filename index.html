@@ -8,7 +8,11 @@
     <script src="https://kit.fontawesome.com/228e9c0f03.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/main.css">
     <title>Happi Pizza</title>
 </head>
@@ -26,14 +30,17 @@
     </nav>
 
     <header class="header" id="header">
-        <div class="header__bars">
+        <button class="header__bars">
             <div class="header__bars-menu">
                 <div class="header__bars-menu-item"></div>
                 <div class="header__bars-menu-item "></div>
                 <div class="header__bars-menu-item "></div>
             </div>
+        </button>
 
-        </div>
+
+
+
 
         <div class="header__box">
             <div class="bottom-slide"></div>
@@ -58,13 +65,18 @@
 
         <section class="aboutus section-padding" id="aboutus">
 
-            <h2 class="section-heading">Poznaj nas!</h2>
+            <h2 class="section-heading "><span class="heading-decoration">Poznaj nas!</span></h2>
 
             <div class="wrapper">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque inventore numquam recusandae
-                    temporibus in fuga dolore! Eos earum ut et. Aliquid, dicta.</p>
-                <p>Illo voluptas saepe impedit nesciunt quasi eos sequi deleniti alias placeat assumenda tempore a fuga
-                    deserunt. Ab temporibus accusantium non perspiciatis cumque facere velit hic eveniet?</p>
+                <p>Zapraszamy do skorzystania z usług naszej Pizzerii. Jesteśmy małym zakładem położonym w Łodzi przy
+                    ul. Kruczej 18.
+                    Oferujemy Państwu szeroki wybór Pizzy, łączący przystępną cenę z niezapomnianymi wrażeniami
+                    smakowymi. Stawiamy przede wszystkim na wysoką jakość produktów oraz profesjonalną obsługę klienta.
+                </p>
+                <p>Co wyróżnia moją pizzę spośród innych pizzerii?
+                    Z pewnością dbałość o jakość składników i dodatków. Wszystkie potrawy i sosy są przygotowywane ze
+                    świeżych, a co najważniejsze, wysokiej klasy produktów. Prawdziwa szynka, prawdziwy włoski ser,
+                    żadnych substytutów.</p>
 
 
                 <div class="aboutus__box">
@@ -96,6 +108,7 @@
 
         </section>
         <section class="hero-img">
+            
             <div class="bottom-slide"></div>
             <div class="top-slide"></div>
 
@@ -116,7 +129,7 @@
         <section class="menu section-padding " id="menu">
 
 
-            <h2 class="section-heading">Nasze menu</h2>
+            <h2 class="section-heading"><span class="heading-decoration">Nasze menu</span></h2>
             <div class="wrapper">
 
                 <table class="menu__table">
@@ -171,6 +184,154 @@
 
         </section>
 
+        <section class="reviews section-padding" id="reviews">
+            <div class="bottom-slide"></div>
+            <div class="top-slide"></div>
+
+            <h2 class="section-heading"><span class="heading-decoration">opinie</span></h2>
+            <div class="wrapper">
+
+                <div class="reviews__boxes">
+
+                    <div class="reviews__box reviews__box-item-one">
+
+                        <div class="reviews__box-item-text">
+                            <h5>10/10</h5>
+                            <p>Najlepsza pizzeria w jakiej byłam! Polecam każdemu. Ulubione miejsce moje i moich
+                                znajomych.</p>
+                            <strong>Anna Kowalska</strong>
+                            <div class="reviews__box-item-img"><img src="./img/a.jpg" alt=""></div>
+                            <div class="reviews__box-item-fas"><i class="fas fa-quote-right"></i></div>
+                        </div>
+                    </div>
+                    <div class="reviews__box reviews__box-item-one">
+                        <div class="reviews__box-item-text">
+                            <h5>8.5/10</h5>
+                            <p>Bardzo dobra pizza, stosunek jakości do ceny bardzo dobry. Warto sprawdzić i wspierać
+                                takie małe lokalne biznesy.</p>
+                            <strong>Magda Paździoch</strong>
+                            <div class="reviews__box-item-img"><img src="./img/c.jpg" alt=""></div>
+                            <div class="reviews__box-item-fas"><i class="fas fa-quote-right"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="reviews__box reviews__box-item-one">
+                        <div class="reviews__box-item-text">
+                            <h5>8/10</h5>
+                            <p>Bardzo dobra pizza dla mnie najlepsza w okolicy, miła obsługa i przystępne ceny.
+                            </p>
+                            <strong>Jakub Kura</strong>
+                            <div class="reviews__box-item-img"><img src="./img/b.jpg" alt=""></div>
+                            <div class="reviews__box-item-fas"><i class="fas fa-quote-right"></i></div>
+                        </div>
+                    </div>
+
+
+                    <div class="reviews__box reviews__box-item-one">
+                        <div class="reviews__box-item-text">
+                            <h5>9/10</h5>
+                            <p>Regularnie zamawiam pizzę z tego miejsca, i za każdym razem przyjeżdżają szybciej niż
+                                jakiekolwiek inne pizzerie w Łodzi.
+                            </p>
+                            <strong>Krzysztof Kolumb</strong>
+                            <div class="reviews__box-item-img"><img src="./img/p1.jpg" alt=""></div>
+                            <div class="reviews__box-item-fas"><i class="fas fa-quote-right"></i></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="reviews__boxes">
+
+
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/a.jpg" alt="">
+                        </div>
+                        <div class="reviews__box-text">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <h5></h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, laboriosam.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/p1.jpg" alt="">
+                        </div>
+                        <div class="reviews__box-text">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <h5></h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, laboriosam.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/c.jpg" alt="">
+                        </div>
+                        <div class="reviews__box-text">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <h5></h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, laboriosam.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/b.jpg" alt="">
+                        </div>
+                        <div class="reviews__box-text">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <h5></h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, laboriosam.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                
+ -->
+
+                <!-- <div class="reviews__boxes">
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/a.jpg" alt="Anna Nowak">
+                        </div>
+                        <div class="reviews__box-quote">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="reviews__box-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias,
+                            fugit delectus ducimus qui esse harum vitae distinctio dolore porro ad.</p>
+                        <strong>Anna Nowak</strong>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/b.jpg" alt="Jan Kowalski">
+                        </div>
+                        <div class="reviews__box-quote">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="reviews__box-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias,
+                            fugit delectus ducimus qui esse harum vitae distinctio dolore porro ad.</p>
+                        <strong>Jan Kowalski</strong>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/c.jpg" alt="Magda Kornik">
+                        </div>
+                        <div class="reviews__box-quote">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="reviews__box-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias,
+                            fugit delectus ducimus qui esse harum vitae distinctio dolore porro ad.</p>
+                        <strong>Magda Kornik</strong>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+
 
 
 
@@ -183,8 +344,10 @@
 
 
 
-
-
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/slick.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

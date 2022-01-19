@@ -50,10 +50,34 @@
 }
 
 .section-heading {
+  position: relative;
   text-transform: uppercase;
   text-align: center;
   font-size: 3.2rem;
   margin-bottom: 1em;
+}
+
+.section-heading .heading-decoration {
+  position: relative;
+}
+
+.section-heading .heading-decoration::before, .section-heading .heading-decoration::after {
+  position: absolute;
+  content: '';
+  bottom: 50%;
+  top: 50%;
+  width: 40px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  border-bottom: 2px solid black;
+}
+
+.section-heading .heading-decoration::before {
+  left: -30px;
+}
+
+.section-heading .heading-decoration::after {
+  right: -70px;
 }
 
 .section-padding {
@@ -64,6 +88,15 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+.heading-underline {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 0;
+  height: 2px;
+  color: #000000;
 }
 
 *,
@@ -285,16 +318,25 @@ body {
 
 .header .header__bars {
   position: fixed;
-  padding: 1em;
-  top: 5px;
-  right: 5px;
+  padding: 0.8em;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
   z-index: 111;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.header .header__bars:focus {
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 8px;
 }
 
 .header .header__bars-menu {
-  cursor: pointer;
   width: 40px;
   height: 40px;
+  cursor: pointer;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
@@ -427,7 +469,7 @@ body {
   background-image: url(../img/pizza-mini.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
   overflow: hidden;
   z-index: -8;
 }
@@ -467,6 +509,70 @@ body {
   z-index: 14;
 }
 
+@media (max-width: 768px) {
+  .main .reviews.section-padding {
+    padding: 4em 0em;
+  }
+}
+
+.main .reviews {
+  background-color: #eee;
+  overflow: hidden;
+  position: relative;
+}
+
+.main .reviews .reviews__box {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  -webkit-box-shadow: 0px 0px 15px 2px #000000;
+          box-shadow: 0px 0px 15px 2px #000000;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 2em;
+  padding: 0 1.5em;
+}
+
+.main .reviews .reviews__box-item-text {
+  text-align: center;
+  padding-top: 3em;
+}
+
+.main .reviews .reviews__box-item-text h5 {
+  margin-bottom: 0.5em;
+  font-size: 2.4rem;
+}
+
+.main .reviews .reviews__box-item-text p {
+  font-size: 1.8rem;
+  padding-bottom: 1em;
+}
+
+.main .reviews .reviews__box-item-fas {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.4rem;
+}
+
+.main .reviews .reviews__box-item-img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #890c0c;
+  overflow: hidden;
+}
+
+.main .reviews .reviews__box-item-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media (min-width: 768px) {
   .header__box-heading {
     font-size: 6rem;
@@ -478,8 +584,8 @@ body {
     font-size: 2.2rem;
   }
   .header .header__bars {
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
   }
   .nav__box-link {
     font-size: 3.2rem;
@@ -532,7 +638,7 @@ body {
     padding: 1em 1.8em;
   }
   .main .menu .menu__table tr td:nth-child(1) {
-    padding-right: 10em;
+    padding-right: 8em;
   }
   .main .hero-img {
     height: 500px;
@@ -554,6 +660,16 @@ body {
   }
   .main .hero-img {
     background-image: url(../img/pizza-big.jpg);
+    background-attachment: fixed;
+  }
+  .section-heading .heading-decoration::before, .section-heading .heading-decoration::after {
+    width: 70px;
+  }
+  .section-heading .heading-decoration::before {
+    left: -45px;
+  }
+  .section-heading .heading-decoration::after {
+    right: -115px;
   }
 }
 /*# sourceMappingURL=main.css.map */

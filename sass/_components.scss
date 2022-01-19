@@ -1,64 +1,95 @@
-.btn-animation{
+.btn-animation {
+	position: relative;
+	overflow: hidden;
 
-    position: relative;
-   overflow: hidden;
+	&::before {
+		position: absolute;
+		top: 0;
+		left: -140%;
+		width: 70px;
+		height: 70px;
+		content: '';
+		transform: skew(120deg);
+		// transform: scale(0);
+		transition: left 0.3s;
+		z-index: -1;
+	}
+
+	&:hover::before {
+		left: 150%;
+		transform: scale(1);
+		transform: skew(120deg);
+	}
+}
+
+.bottom-slide {
+	position: absolute;
+	width: 60%;
+	bottom: 0;
+	left: -10%;
+	transform: skew(45deg);
+	height: 30px;
+	background-color: #fff;
+	z-index: 15;
+}
+.top-slide {
+	position: absolute;
+	width: 60%;
+	top: 0;
+	right: -10%;
+	transform: skew(45deg);
+	height: 30px;
+	background-color: #fff;
+	z-index: 15;
+}
+
+.section-heading {
+	position: relative;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 3.2rem;
+	margin-bottom: 1em;
     
 
-    &::before{
-        position: absolute;
-        top: 0;
-        left: -140%;
-        width: 70px;
-        height: 70px;
-        content: '';
-        transform: skew(120deg);
-        // transform: scale(0);
-        transition: left 0.3s;
-        z-index: -1;
+	.heading-decoration {
+		position: relative;
 
-    }
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 50%;
+			top: 50%;
+			width: 40px;
+			transform: translate(-50%, 0);
+			border-bottom: 2px solid black;
+            
+		}
+		&::before {
+			left: -30px;
+		}
 
-    &:hover::before{
-        left: 150%;
-        transform: scale(1);
-        transform: skew(120deg);
-    }
+		&::after {
+			right: -70px;
+		}
+	}
 }
 
-.bottom-slide{
-    position: absolute;
-    width:60%;
-    bottom: 0;
-   left: -10%;
-    transform: skew(45deg);
-    height: 30px;
-    background-color: #fff;
-    z-index: 15;
-}
-.top-slide{
-    position: absolute;
-    width:60%;
-   top: 0;
-   right: -10%;
-    transform: skew(45deg);
-    height: 30px;
-    background-color: #fff;
-    z-index: 15;
+.section-padding {
+	padding: 4em 2em;
 }
 
-.section-heading{
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 3.2rem;
-    margin-bottom: 1em;
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
 }
 
-.section-padding{
-    padding: 4em 2em;
-}
-
-.wrapper{
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
+.heading-underline {
+	position: absolute;
+	bottom: 0;
+	width: 80%;
+	left: 0;
+	height: 2px;
+	color: $black;
 }
