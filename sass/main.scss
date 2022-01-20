@@ -58,10 +58,10 @@ body {
 	width: 100%;
 	height: 100vh;
 	background-color: $black;
-	z-index: 100;
 	clip-path: circle(25% at 50% 50%);
 	transform: scale(0);
 	transition: 0.3s ease-in;
+	z-index: 100;
 
 	&__box {
 		display: flex;
@@ -73,12 +73,12 @@ body {
 		&-link {
 			position: relative;
 			margin-bottom: 1em;
+			padding: 0.2em;
 			font-size: 2.4rem;
 			text-decoration: none;
 			text-transform: uppercase;
 			color: $white;
 			transition: color 0.3s;
-			padding: 0.2em;
 
 			&:hover {
 				color: $link-color;
@@ -97,8 +97,8 @@ body {
 				height: 0px;
 				width: 0px;
 				border-bottom: 2px solid $link-color;
-				z-index: 100;
 				transition: 0.3s;
+				z-index: 100;
 			}
 
 			&::after {
@@ -172,11 +172,11 @@ body {
 			a {
 				font-family: var(--light-font);
 				display: block;
-				text-transform: uppercase;
-				text-decoration: none;
+				padding: 0.4em 0.8em;
 				color: $white;
 				font-size: 1.8rem;
-				padding: 0.4em 0.8em;
+				text-transform: uppercase;
+				text-decoration: none;
 			}
 		}
 		&-shadow {
@@ -194,10 +194,10 @@ body {
 		padding: 0.8em;
 		top: 15px;
 		right: 15px;
-		cursor: pointer;
-		z-index: 111;
 		background: none;
 		border: 1px solid transparent;
+		cursor: pointer;
+		z-index: 111;
 
 		&:focus {
 			outline: none;
@@ -278,23 +278,18 @@ body {
 
 	.menu {
 		position: relative;
-		// height: 100vh;
 		background-color: $white;
-		// color: $menu-text-color;
-		// background-color: $menu-bgc-color;
 		color: $black;
 		overflow: hidden;
 
 		.menu__table {
-			// border: 1px solid yellow;
-			padding-top: 1em;
-			padding-bottom: 3em;
-
-			font-size: 1.8rem;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-between;
+			padding-top: 1em;
+			padding-bottom: 3em;
+			font-size: 1.8rem;
 
 			tr {
 				.border-none {
@@ -331,9 +326,7 @@ body {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-
 		overflow: hidden;
-
 		z-index: -8;
 
 		&__text {
@@ -394,6 +387,11 @@ body {
 			border-radius: 8px;
 			margin: 2em;
 			padding: 0 1.5em;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(0.95);
+			}
 
 			&-item-text {
 				text-align: center;
@@ -444,15 +442,15 @@ body {
 
 			.contact__box {
 				position: relative;
-				width: 260px;
-				height: 150px;
-				margin: 2em;
-				border: 1px solid $grey;
-				border-top: none;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				width: 260px;
+				height: 160px;
+				margin: 2em;
+				border: 1px solid $grey;
+				border-top: none;
 
 				&::before,
 				&::after {
@@ -502,6 +500,62 @@ body {
 	}
 }
 
+
+//footer 
+
+.footer{
+	background-color: $grey;
+	position: relative;
+	overflow: hidden;
+	&__boxes{
+		padding: 1em;
+		padding-top: 3em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		.footer__box{
+			margin: 1em;
+			// background-color: #fff;
+
+			h4{
+				margin-bottom: 1em;
+			}
+			p{
+				font-size: 1.6rem;
+			}
+
+			a{
+				text-decoration: none;
+				color: $black;
+				
+
+				i{
+					color: $black;
+					font-size: 3.8rem;
+					padding:0 0.5em;
+				}
+			}
+
+			
+		}
+
+		.footer__box-desktop{
+			display: none;
+			ul{
+				list-style: none;
+			}
+		}
+	}
+
+	&__p{
+		text-align: center;
+		padding: 1em 0;
+	}
+
+
+}
 //MEDIA
 @media (min-width: 768px) {
 	.header {
@@ -668,6 +722,16 @@ body {
 						top: 0;
 						width: 100px;
 						border-bottom: 1px solid $grey;
+					}
+
+					&-text {
+						h5 {
+							font-size: 2.4rem;
+						}
+
+						p {
+							font-size: 1.8rem;
+						}
 					}
 				}
 			}
