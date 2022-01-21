@@ -1,6 +1,6 @@
 const burgerBtn = document.querySelector('.header__bars-menu')
-const nav = document.querySelector('.nav')
-const navLinks = document.querySelectorAll('.nav__box-link')
+const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.nav__box-link');
 
 const handleBtn = () => {
 	nav.classList.toggle('toggle-nav');

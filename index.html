@@ -32,7 +32,7 @@
     <header class="header" id="header">
         <button class="header__bars">
             <div class="header__bars-menu">
-                <div class="header__bars-menu-item"></div>
+                <div class="header__bars-menu-item "></div>
                 <div class="header__bars-menu-item "></div>
                 <div class="header__bars-menu-item "></div>
             </div>
@@ -63,7 +63,7 @@
 
     <main class="main">
 
-        <section class="aboutus section-padding" id="aboutus">
+        <section class="aboutus section-padding white-section" id="aboutus">
 
             <h2 class="section-heading "><span class="heading-decoration">Poznaj nas!</span></h2>
 
@@ -126,7 +126,7 @@
 
 
 
-        <section class="menu section-padding " id="menu">
+        <section class="menu section-padding white-section" id="menu">
 
 
             <h2 class="section-heading"><span class="heading-decoration">Nasze menu</span></h2>
@@ -184,7 +184,7 @@
 
         </section>
 
-        <section class="reviews section-padding" id="reviews">
+        <section class="reviews section-padding white-section" id="reviews">
             <div class="bottom-slide"></div>
             <div class="top-slide"></div>
 
@@ -245,7 +245,7 @@
             </div>
         </section>
 
-        <section class="contact section-padding" id="contact">
+        <section class="contact section-padding white-section" id="contact">
             <h2 class="section-heading "><span class="heading-decoration">Kontakt</span></h2>
             <div class="wrapper">
 
@@ -284,6 +284,30 @@
 
 
         </section>
+        <section class="form " id="form">
+
+            <div class="wrapper">
+                <h3>Masz jakieś pytanie?</h3>
+                <p>Napisz do nas</p>
+
+
+                <form class="form__box">
+                    <label for="name" class="form__box-label">Imię</label>
+                    <input type="text" id="name" class="form__box-input">
+                    <label for="surname" class="form__box-label">Nazwisko</label>
+                    <input type="text" id="surname" class="form__box-input">
+                    <label for="mail" class="form__box-label">Adres e-mail</label>
+                    <input type="mail" id="mail" class="form__box-input">
+                    <label for="message" class="form__box-label">Twoja wiadomość</label>
+                    <textarea name="message" id="message" class="form__box-textarea"></textarea>
+                    <button type="submit" class="form__box-btn">Wyślij</button>
+
+
+
+                </form>
+            </div>
+
+        </section>
 
 
 
@@ -318,7 +342,7 @@
                 </div>
             </div>
             <hr>
-            <p class="footer__p"> &copy 2022 Happi Pizza</pc>
+            <p class="footer__p"> &copy <span class="footer__year">2022</span> Happi Pizza</pc>
 
         </div>
     </footer>
