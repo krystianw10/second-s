@@ -191,46 +191,82 @@ body {
 	}
 	.header__bars {
 		position: fixed;
-		padding: 0.8em;
-		top: 15px;
-		right: 15px;
+		padding: 0.4em;
+		top: 10px;
+		right: 10px;
 		background: none;
 		border: 1px solid transparent;
 		cursor: pointer;
 		z-index: 111;
-
 		&:focus {
 			outline: none;
 			border: 1px solid $white;
 			border-radius: 8px;
 		}
-
 		&-menu {
-			width: 40px;
-			height: 40px;
+			padding: 2em;
+			width: 50px;
+			height: 20px;
 			cursor: pointer;
 			transition: 0.3s ease;
 
-			&:hover .header__bars-menu-item {
-				box-shadow: 0 0 6px 3px $footer-color;
-				// box-shadow: 0px 0px 2px 1px $link-color;
-			}
-
 			&-item {
+				position: absolute;
+				left: 10px;
+				top: 30px;
 				width: 40px;
+
 				height: 5.5px;
-				background-color: $button-hover-color;
-
+				background-color: $white;
 				border-radius: 8px;
-
+				opacity: 1;
 				z-index: 111;
-				transition: box-shadow 0.3s ease;
-				&:not(:first-child) {
-					margin-top: 8px;
+				transition: all 0.3s;
+				
+
+				&::before,
+				&::after {
+					position: absolute;
+					content: '';
+
+					left: 0;
+					width: 40px;
+					height: 5.5px;
+					border-radius: 8px;
+					background-color: $white;
+					transition: all 0.3s;
+				}
+
+				&::before {
+					bottom: 12px;
+					background-color: $white;
+				}
+
+				&::after {
+					bottom: -12px;
+					background-color: $white;
 				}
 			}
 
-			
+			.black-bars-color,
+			.black-bars-color::after,
+			.black-bars-color::before {
+				background-color: $black;
+			}
+
+			.cross-btn {
+				background-color: transparent;
+				transform: rotateY(180deg);
+
+				&::before {
+					transform: rotate(45deg);
+					bottom: 0;
+				}
+				&::after {
+					transform: rotate(-45deg);
+					bottom: 0;
+				}
+			}
 		}
 	}
 }
@@ -558,7 +594,7 @@ body {
 				cursor: pointer;
 				transition: background-color 0.3s;
 
-				&:hover{
+				&:hover {
 					background-color: $button-hover-color;
 				}
 			}

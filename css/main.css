@@ -318,9 +318,9 @@ body {
 
 .header .header__bars {
   position: fixed;
-  padding: 0.8em;
-  top: 15px;
-  right: 15px;
+  padding: 0.4em;
+  top: 10px;
+  right: 10px;
   background: none;
   border: 1px solid transparent;
   cursor: pointer;
@@ -334,32 +334,72 @@ body {
 }
 
 .header .header__bars-menu {
-  width: 40px;
-  height: 40px;
+  padding: 2em;
+  width: 50px;
+  height: 20px;
   cursor: pointer;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
-.header .header__bars-menu:hover .header__bars-menu-item {
-  -webkit-box-shadow: 0 0 6px 3px #2c2a2a;
-          box-shadow: 0 0 6px 3px #2c2a2a;
-}
-
 .header .header__bars-menu-item {
+  position: absolute;
+  left: 10px;
+  top: 30px;
   width: 40px;
   height: 5.5px;
-  background-color: grey;
+  background-color: #fff;
   border-radius: 8px;
+  opacity: 1;
   z-index: 111;
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.header .header__bars-menu-item:not(:first-child) {
-  margin-top: 8px;
+.header .header__bars-menu-item::before, .header .header__bars-menu-item::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 40px;
+  height: 5.5px;
+  border-radius: 8px;
+  background-color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header .header__bars-menu-item::before {
+  bottom: 12px;
+  background-color: #fff;
+}
+
+.header .header__bars-menu-item::after {
+  bottom: -12px;
+  background-color: #fff;
+}
+
+.header .header__bars-menu .black-bars-color,
+.header .header__bars-menu .black-bars-color::after,
+.header .header__bars-menu .black-bars-color::before {
+  background-color: #000000;
+}
+
+.header .header__bars-menu .cross-btn {
+  background-color: transparent;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.header .header__bars-menu .cross-btn::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: 0;
+}
+
+.header .header__bars-menu .cross-btn::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 0;
 }
 
 .main .aboutus p {
