@@ -750,6 +750,10 @@ body {
      object-fit: cover;
 }
 
+.main .contact {
+  overflow: hidden;
+}
+
 .main .contact .contact__boxes {
   display: -webkit-box;
   display: -ms-flexbox;
